@@ -1,0 +1,700 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Locations</title>
+        <meta name="viewport" content="width-device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/location.css' %} ">
+   
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Libertinus+Sans:ital,wght@0,400;0,700;1,400&display=swap');
+    
+      * {
+        margin: 0;
+        padding: 0;
+    
+      }
+    
+      .libertinus-sans-regular {
+        font-family: "Libertinus Sans", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+    
+      nav {
+        background-color: transparent;
+        position: absolute;
+        padding: 20px;
+        font-size: 30px;
+        box-shadow: 6px 7px 6px 4px;
+        width: 100%;
+        color: aliceblue;
+        display: flex;
+        z-index: 5;
+        margin-bottom: 50%;
+      }
+    
+      .screen3 {
+        background-color: black;
+        opacity: 0.8;
+        position: absolute;
+        z-index: 20;
+        width: 100%;
+        height: 100%;
+        display: none;
+        margin-top:40px;
+      }
+    
+      .popbox {
+        display: none;
+      }
+    
+      .videob {
+        position: absolute;
+        z-index: 3;
+      }
+    
+      .btn {
+        display: flex;
+        margin-left: 460px;
+        margin-top: 38px;
+        color: goldenrod;
+    
+      }
+    
+      #mn {
+        display: none;
+      }
+    
+      a {
+        color: aliceblue;
+        text-decoration: none;
+      }
+    
+      .wkbtn {
+        color: aliceblue;
+      }
+    
+      .wkbtn:hover {
+        cursor: pointer;
+        text-decoration: underline 6px aliceblue;
+    
+      }
+    
+      .abbtn {
+        margin-left: 20px;
+        color: aliceblue;
+      }
+    
+      .abbtn:hover {
+        cursor: pointer;
+        text-decoration: underline 6px aliceblue;
+    
+      }
+    
+      .hbtn {
+        margin-left: 20px;
+        color: aliceblue;
+      }
+    
+      .hbtn:hover {
+        cursor: pointer;
+        text-decoration: underline 6px aliceblue;
+    
+      }
+    
+      .lbtn {
+        margin-left: 20px;
+        color: aliceblue;
+      }
+    
+      .lbtn:hover {
+        cursor: pointer;
+        text-decoration: underline 6px aliceblue;
+    
+      }
+    
+      .btn-cont {
+        z-index: 7;
+        position: absolute;
+        margin-top: 15%;
+        margin-left: 35%;
+        display: flex;
+        flex-direction: column;
+      }
+    
+      button {
+        padding-left: 100px;
+        padding-right: 100px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        background-color: transparent;
+        color: aliceblue;
+        font-size: 25px;
+        font-weight: bold;
+    
+      }
+    
+      button:hover {
+        cursor: pointer;
+        color: rgb(243, 246, 246);
+        box-shadow: 10px 5px 30px aliceblue;
+      }
+    
+      .SA {
+        margin-bottom: 15px;
+      }
+    
+      .NA {
+        margin-bottom: 15px;
+      }
+    
+      .AS {
+        margin-bottom: 15px;
+      }
+    
+      .EU {
+        margin-bottom: 15px;
+      }
+    
+      .loca-box1 {
+        display: flex;
+        margin: 5px;
+        top: -100%;
+        transition: 1s;
+        position: absolute;
+        z-index: 23;
+        color: aliceblue;
+    
+    
+    
+      }
+    
+      .loca-box2 {
+        display: flex;
+        margin: 5px;
+        top: -100%;
+        transition: 1s;
+        position: absolute;
+        color: aliceblue;
+        z-index: 23;
+    
+      }
+    
+      .loca-box3 {
+        display: flex;
+        margin: 5px;
+        top: -100%;
+        transition: 1s;
+        position: absolute;
+        color: aliceblue;
+        z-index: 23;
+    
+    
+      }
+    
+      #up:hover {
+        cursor: pointer;
+        color: aliceblue;
+        box-shadow: aliceblue 0px 54px 55px, aliceblue 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, lightblue 0px 12px 13px, lightblue 0px -3px 5px;
+        height: 6px;
+      }
+    
+    
+    
+    
+    
+      .loca-box4 {
+        display: flex;
+        margin: 5px;
+        top: -150%;
+        transition: 1s;
+        position: absolute;
+        color: aliceblue;
+        z-index: 23;
+    
+    
+    
+      }
+    
+      .hor {
+        width: 200px;
+      }
+    
+      .ind-l {
+        padding: 10px;
+      }
+    
+      .chi-l {
+        padding: 10px;
+      }
+    
+      .mag-l {
+        padding: 10px;
+    
+      }
+    
+      .screen1 {
+        background-color: black;
+        opacity: 0.8;
+        position: absolute;
+        z-index: 20;
+        width: 100%;
+        height: 100%;
+        display: none;
+      }
+    
+      .foot {
+        position: absolute;
+        z-index: 14;
+        margin-top: 45%;
+      }
+    
+      .foot1 {
+        display: flex;
+      }
+    
+      .mail {
+    
+    
+        font-size: 20px;
+    
+      }
+    
+      .mail a {
+        margin-bottom: 5px;
+      }
+    
+      @media screen and (max-width:900px) {
+        .videob {
+          display: none;
+        }
+    
+        nav {
+          background-color: rgb(4, 4, 71);
+          color: goldenrod;
+          position: static;
+          margin: 0;
+          padding-left: 3px;
+          justify-content: space-between;
+    
+        }
+    
+        .head {
+          font-size: 20px;
+        }
+    
+        .btn {
+          display: none;
+        }
+    
+        #mn {
+          display: block;
+        }
+    
+        #mn:hover {
+          color: gold;
+          cursor: pointer;
+          box-shadow: 10px 5px 30px goldenrod;
+        }
+    
+        .loca-box1 {
+          top: -100%;
+        }
+    
+        .loca-box2 {
+          top: -100%;
+        }
+    
+        .loca-box3 {
+          top: -100%;
+        }
+    
+        .loca-box4 {
+          top: -100%;
+        }
+    
+        .popbox1 {
+          background-color: rgb(4, 4, 71);
+          color: goldenrod;
+          width: 100px;
+          margin-left: 640px;
+          padding: 8px;
+          display: block;
+          position: absolute;
+          z-index: 22;
+          top: -30%;
+          transition: 1s;
+        }
+    
+        .wkbtn1 {
+          margin-bottom: 8px;
+          font-size: 25px;
+        }
+    
+        .wkbtn1:hover {
+          cursor: pointer;
+          text-decoration: underline;
+        }
+    
+        .hbtn1 {
+          margin-bottom: 8px;
+          font-size: 25px;
+        }
+    
+        .hbtn1:hover {
+          cursor: pointer;
+          text-decoration: underline;
+        }
+    
+        .locbtn1 {
+          margin-bottom: 8px;
+          font-size: 25px;
+        }
+    
+        .locbtn1:hover {
+          cursor: pointer;
+          text-decoration: underline;
+        }
+    
+        .lbtn1 {
+          margin-bottom: 8px;
+          font-size: 25px;
+        }
+    
+        .lbtn1:hover {
+          cursor: pointer;
+          text-decoration: underline;
+        }
+        #up{
+          color:gold;
+        }
+        #up:hover {
+          cursor: pointer;
+          color: gold;
+          box-shadow: gold 0px 54px 55px, goldenrod 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, gold 0px 12px 13px, goldenrod 0px -3px 5px;
+        }
+    
+        button {
+          background-color: rgb(4, 4, 71);
+          color: goldenrod;
+    
+        }
+    
+        button:hover {
+          cursor: pointer;
+          color: goldenrod;
+          box-shadow: 8px 5px 20px goldenrod;
+        }
+    
+        .foot {
+          margin-top: 72%;
+        }
+    
+        .btn-cont {
+          margin-right: 35%;
+          margin-left: 30%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+     <video width="1550px"  playsinline autoplay muted loop class="videob">
+                <source src="{% static 'assets/videos/loca.mp4' %}" type="video/mp4">
+            </video>
+            <nav>
+              <div class="head">
+                <h5>JP morgan's</h5>
+                <h2 class="logo">Steel Waste Management System</h2>
+                </div>
+                <div class="btn">
+                  <p class="wkbtn"><a href="/SWMS/work/">Work</a></p>
+                  <p class="abbtn"><a href="/SWMS/about/">About</a></p>
+                  <p class="hbtn"><a href="/SWMS/home/">Home</a></p>
+                  <p class="lbtn"><a href="/SWMS/login/">Logout</a></p>
+                </div>
+                <i class="fa-solid fa-ellipsis" id="mn" onclick="dss()"></i>
+            </nav>
+            
+             <div class="popbox1">
+                <p class="wkbtn1" onclick="show6()">Work</p>
+                  <p onclick="show1()" class="locbtn1">About</p>
+                  <p  onclick="show2()" class="hbtn1">Home</p>
+                  <p onclick="show5()" class="lbtn1">Logout</p>
+                  <i class="fa-solid fa-angle-up" id="up" onclick="dpp()" ></i>
+            </div>
+            <div class="btn-cont">
+            <button onclick="sh1()" class="SA">South America</button>
+            <button onclick="sh2()" class="NA">North America</button>
+            <button onclick="sh()" class="AS">Asia</button>
+           
+          </div>
+          
+                    <div class="loca-box1">
+                      <div class="ind-l">
+                        <h1>India</h1>
+                        <hr>
+                        <h2>Mumbai</h2>
+                        <h4>1/56 Sarah navaroji road,Sunthar singh nagar </h4>
+                        <p>SWMS manager: Chandra phno:657849202 email:chandra@gmail.com</p>
+                        <button class="mail"><a href="mailto:chandra@gmail.com">Mail</a></button>
+                        <hr class="hor">
+                        <h2>Bangalore</h2>
+                        <h4> 2/46 Vedha nayaga sasthiriyar road, Carey nagar</h4>
+                        <p> SWMS manager: Solomon phno:7878739202 email:Solomon@gmail.com</p>
+                        <button class="mail"><a href="mailto:chandra@gmail.com">Mail</a></button>
+                        
+                        <hr class="hor">
+
+                        <h2>Chennai</h2>
+                        <h4> 3/80 Jevanantham road, DGS nagar</h4>
+                        <p>SWMS manager:Raphel phno:6767767898 email:raphel@gmail.com</p>
+                        <button class="mail"><a href="mailto:chandra@gmail.com">Mail</a></button>
+                        <hr class="hor">
+                        
+                      </div>
+                      <div class="chi-l">
+                        <h1>China</h1>
+                        <hr>
+                        <h2>Hong-kong</h2>
+                        <h4>2/56 D.L.Moody road Hudson village</h4>
+                        <p>SWMS manager Osborn phno: 567987865 email:osborn@gamil.com </p>
+                        <button class="mail"><a href="mailto:chandra@gmail.com">Mail</a></button>
+                        <hr class="hor">
+                        <h2>Bejing</h2>
+                        <h4>6/98 Billy road D.L.Moody city</h4>
+                        <p>SWMS manager:Jonnson phno: 6880098 email:John@gmail.com</p>
+                        <button class="mail"><a href="mailto:chandra@gmail.com">Mail</a></button>
+                        <hr class="hor">
+                        <h2>Shanghai</h2>
+                        <h4>7/90 Eric road, Graham town</h4>
+                        <p>SWMS manager: Tim phno:798777899 email:Tim@gmail.com</p>
+                        <button class="mail"><a href="mailto:chandra@gmail.com">Mail</a></button>
+
+                      </div>
+                      <div class="mag-l">
+                        <h1>Magolia</h1>
+                        <hr>
+                        <h2>Lorem, ipsum.</h2>
+                        <h4>Lorem ipsum dolor sit.</h4>
+                        <p>SWMS manager: Wesley phno:78898767667 email:wes@gmail.com</p>
+                        <button class="mail"><a href="mailto:chandra@gmail.com">Mail</a></button>
+                        <hr class="hor">
+                        <h2>Lorem, ipsum.</h2>
+                        <h4>Lorem ipsum dolor sit.</h4>
+                        <p>SWMS manager: Eliot phno:78898767667 email:Eliot@gmail.com</p>
+                        <button class="mail"><a href="mailto:chandra@gmail.com">Mail</a></button>
+                        <hr class="hor">
+                        <h2>Lorem, ipsum.</h2>
+                        <h4>Lorem ipsum dolor sit.</h4>
+                        <p>SWMS manager: Marcasis phno:78898767667 email:Marca@gmail.com</p>
+                        <button class="mail"><a href="mailto:chandra@gmail.com">Mail</a></button>
+                        
+                      </div>
+                      
+                     <i class="fa-solid fa-angle-up" id="up" onclick="dc()" ></i>
+                    </div>
+                   
+                    <div class="loca-box2">
+                      <div class="ind-l">
+                        <h1>US</h1>
+                        <hr>
+                        <h2>Mumbai</h2>
+                        <h4>1/56 Sarah navaroji road,Sunthar singh nagar </h4>
+                        <p>SWMS manager: Chandra phno:657849202 email:chandra@gmail.com</p>
+                        <button class="mail"><a href="mailto:chandra@gmail.com">Mail</a></button>
+                        <hr class="hor">
+                        <h2>Bangalore</h2>
+                        <h4> 2/46 Vedha nayaga sasthiriyar road, Carey nagar</h4>
+                        <p> SWMS manager: Solomon phno:7878739202 email:Solomon@gmail.com</p>
+                        <button class="mail"><a href="mailto:chandra@gmail.com">Mail</a></button>
+                        <hr class="hor">
+                        <h2>Chennai</h2>
+                        <h4> 3/80 Jevanantham road, DGS nagar</h4>
+                        <p>SWMS manager:Raphel phno:6767767898 email:raphel@gmail.com</p>
+                        <button class="mail"><a href="mailto:chandra@gmail.com">Mail</a></button>
+                        
+                        
+                      </div>
+                      <div class="chi-l">
+                        <h1>Mexico</h1>
+                        <hr>
+                        <h2>Hong-kong</h2>
+                        <h4>2/56 D.L.Moody road Hudson village</h4>
+                        <p>SWMS manager Osborn phno: 567987865 email:osborn@gamil.com </p>
+                        <button class="mail"><a href="mailto:chandra@gmail.com">Mail</a></button>
+                        <hr class="hor">
+                        <h2>Bejing</h2>
+                        <h4>6/98 Billy road D.L.Moody city</h4>
+                        <p>SWMS manager:Jonnson phno: 6880098 email:John@gmail.com</p>
+                        <button class="mail"><a href="mailto:chandra@gmail.com">Mail</a></button>
+                        <hr class="hor">
+                        <h2>Shanghai</h2>
+                        <h4>7/90 Eric road, Graham town</h4>
+                        <p>SWMS manager: Tim phno:798777899 email:Tim@gmail.com</p>
+                        <button class="mail"><a href="mailto:chandra@gmail.com">Mail</a></button>
+
+                      </div>
+                      <div class="mag-l">
+                        <h1>Greenland</h1>
+                        <hr>
+                        <h2>Lorem, ipsum.</h2>
+                        <h4>Lorem ipsum dolor sit.</h4>
+                        <p>SWMS manager: Wesley phno:78898767667 email:wes@gmail.com</p>
+                        <button class="mail"><a href="mailto:chandra@gmail.com">Mail</a></button>
+                        <hr class="hor">
+                        <h2>Lorem, ipsum.</h2>
+                        <h4>Lorem ipsum dolor sit.</h4>
+                        <p>SWMS manager: Eliot phno:78898767667 email:Eliot@gmail.com</p>
+                        <button class="mail"><a href="mailto:chandra@gmail.com">Mail</a></button>
+                        <hr class="hor">
+                        <h2>Lorem, ipsum.</h2>
+                        <h4>Lorem ipsum dolor sit.</h4>
+                        <p>SWMS manager: Marcasis phno:78898767667 email:Marca@gmail.com</p>
+                        <button class="mail"><a href="mailto:chandra@gmail.com">Mail</a></button>
+                        
+                      </div>
+                     <i class="fa-solid fa-angle-up" id="up" onclick="dc1()" ></i>
+                    </div>
+                    <div class="loca-box3">
+                      <div class="ind-l">
+                        <h1>Brazil</h1>
+                        <hr>
+                        <h2>lorem</h2>
+                        <h4>1/56 Sarah navaroji road,Sunthar singh nagar </h4>
+                        <p>SWMS manager: Chandra phno:657849202 email:chandra@gmail.com</p>
+                        <button class="mail"><a href="mailto:chandra@gmail.com">Mail</a></button>
+                        <hr class="hor">
+                        <h2>lorem</h2>
+                        <h4> 2/46 Vedha nayaga sasthiriyar road, Carey nagar</h4>
+                        <p> SWMS manager: Solomon phno:7878739202 email:Solomon@gmail.com</p>
+                        <button class="mail"><a href="mailto:chandra@gmail.com">Mail</a></button>
+                        <hr class="hor">
+                        <h2>lorem</h2>
+                        <h4> 3/80 Jevanantham road, DGS nagar</h4>
+                        <p>SWMS manager:Raphel phno:6767767898 email:raphel@gmail.com</p>
+                        <button class="mail"><a href="mailto:chandra@gmail.com">Mail</a></button>
+                        
+                        
+                      </div>
+                      <div class="chi-l">
+                        <h1>Peru</h1>
+                        <hr>
+                        <h2>Hong-kong</h2>
+                        <h4>2/56 D.L.Moody road Hudson village</h4>
+                        <p>SWMS manager Osborn phno: 567987865 email:osborn@gamil.com </p>
+                        <button class="mail"><a href="mailto:chandra@gmail.com">Mail</a></button>
+                        <hr class="hor">
+                        <h2>Bejing</h2>
+                        <h4>6/98 Billy road D.L.Moody city</h4>
+                        <p>SWMS manager:Jonnson phno: 6880098 email:John@gmail.com</p>
+                        <button class="mail"><a href="mailto:chandra@gmail.com">Mail</a></button>
+                        <hr class="hor">
+                        <h2>Shanghai</h2>
+                        <h4>7/90 Eric road, Graham town</h4>
+                        <p>SWMS manager: Tim phno:798777899 email:Tim@gmail.com</p>
+                        <button class="mail"><a href="mailto:chandra@gmail.com">Mail</a></button>
+
+                      </div>
+                      <div class="mag-l">
+                        <h1>Chile</h1>
+                        <hr>
+                        <h2>Lorem, ipsum.</h2>
+                        <h4>Lorem ipsum dolor sit.</h4>
+                        <p>SWMS manager: Wesley phno:78898767667 email:wes@gmail.com</p>
+                        <button class="mail"><a href="mailto:chandra@gmail.com">Mail</a></button>
+                        <hr class="hor">
+                        <h2>Lorem, ipsum.</h2>
+                        <h4>Lorem ipsum dolor sit.</h4>
+                        <p>SWMS manager: Eliot phno:78898767667 email:Eliot@gmail.com</p>
+                        <button class="mail"><a href="mailto:chandra@gmail.com">Mail</a></button>
+                        <hr class="hor">
+                        <h2>Lorem, ipsum.</h2>
+                        <h4>Lorem ipsum dolor sit.</h4>
+                        <p>SWMS manager: Marcasis phno:78898767667 email:Marca@gmail.com</p>
+                        <button class="mail"><a href="mailto:chandra@gmail.com">Mail</a></button>
+                        
+                      </div>
+                     <i class="fa-solid fa-angle-up" id="up" onclick="dc2()" ></i>
+                    </div>
+                    <div class="loca-box4">
+                      <div class="ind-l">
+                        <h1>Manoco</h1>
+                        <hr>
+                        <h2>Mumbai</h2>
+                        <h4>1/56 Sarah navaroji road,Sunthar singh nagar </h4>
+                        <p>SWMS manager: Chandra phno:657849202 email:chandra@gmail.com</p>
+                        <button class="mail"><a href="mailto:chandra@gmail.com">Mail</a></button>
+                        <hr class="hor">
+                        <h2>Bangalore</h2>
+                        <h4> 2/46 Vedha nayaga sasthiriyar road, Carey nagar</h4>
+                        <p> SWMS manager: Solomon phno:7878739202 email:Solomon@gmail.com</p>
+                        <button class="mail"><a href="mailto:chandra@gmail.com">Mail</a></button>
+                        <hr class="hor">
+                        <h2>Chennai</h2>
+                        <h4> 3/80 Jevanantham road, DGS nagar</h4>
+                        <p>SWMS manager:Raphel phno:6767767898 email:raphel@gmail.com</p>
+                        <button class="mail"><a href="mailto:chandra@gmail.com">Mail</a></button>
+                        
+                        
+                      </div>
+                      <div class="chi-l">
+                        <h1>San-marino</h1>
+                        <hr>
+                        <h2>Hong-kong</h2>
+                        <h4>2/56 D.L.Moody road Hudson village</h4>
+                        <p>SWMS manager Osborn phno: 567987865 email:osborn@gamil.com </p>
+                         <button class="mail"><a href="mailto:chandra@gmail.com">Mail</a></button>
+                        <hr class="hor">
+                        <h2>Bejing</h2>
+                        <h4>6/98 Billy road D.L.Moody city</h4>
+                        <p>SWMS manager:Jonnson phno: 6880098 email:John@gmail.com</p>
+                         <button class="mail"><a href="mailto:chandra@gmail.com">Mail</a></button>
+                        <hr class="hor">
+                        <h2>Shanghai</h2>
+                        <h4>7/90 Eric road, Graham town</h4>
+                        <p>SWMS manager: Tim phno:798777899 email:Tim@gmail.com</p>
+                         <button class="mail"><a href="mailto:chandra@gmail.com">Mail</a></button>
+
+                      </div>
+                      <div class="mag-l">
+                        <h1>Holy see</h1>
+                        <hr>
+                        <h2>Lorem, ipsum.</h2>
+                        <h4>Lorem ipsum dolor sit.</h4>
+                        <p>SWMS manager: Wesley phno:78898767667 email:wes@gmail.com</p>
+                         <button class="mail"><a href="mailto:chandra@gmail.com">Mail</a></button>
+                        <hr class="hor">
+                        <h2>Lorem, ipsum.</h2>
+                        <h4>Lorem ipsum dolor sit.</h4>
+                        <p>SWMS manager: Eliot phno:78898767667 email:Eliot@gmail.com</p>
+                         <button class="mail"><a href="mailto:chandra@gmail.com">Mail</a></button>
+                        <hr class="hor">
+                        <h2>Lorem, ipsum.</h2>
+                        <h4>Lorem ipsum dolor sit.</h4>
+                        <p>SWMS manager: Marcasis phno:78898767667 email:Marca@gmail.com</p>
+                         <button class="mail"><a href="mailto:chandra@gmail.com">Mail</a></button>
+                        
+                      </div>
+                     <i class="fa-solid fa-angle-up" id="up" onclick="dc3()" ></i>
+                    </div>
+                    
+                    <div class="screen3"></div>
+
+            <div class="foot">
+                <hr>
+                <h5>JP Morgan's</h5>
+                <h1>Steel Waste Management</h1>
+                <div class="foot1">
+                <i class="fa-regular fa-copyright"></i>
+                <p>JP Morgan _All copyright reserved</p>
+                </div>
+                </div>
+               
+
+                <script src="{% static 'script/script.js' %}"></script>
+</body>
+</html>

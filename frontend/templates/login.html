@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width-device-width, initial-scale=1.0">
+
+        <title>Steel waste management</title>
+        <link rel="stylesheet" href="{% static 'css/login.css' %}">
+
+    </head>
+    <body>
+        <nav>
+            <h5>JP morgan's</h5>
+            <h2 class="logo">Steel Waste Management System</h2>
+        </nav>
+        <button class="log" onclick="show()">Login</button>
+        <div class="blscreen"></div>
+        <div class="popbox">
+            
+            <form id="lfo">
+                <h1>Login</h1>
+                <div class="inputbox1">
+                 <p>User name</p>   
+                <input type="text" class="user" name="username">
+                </div>
+                <div class="inputbox2">
+                 <p>Password</p>   
+                <input type="text" class="pass-word" name="password">
+                </div>
+                <button class="subbtn" type="submit">Login</button>
+
+
+            </form>
+        </div>
+        
+        <video playsinline autoplay muted loop class="videob">
+            <source src="{% static 'assets/videos/13509483_1920_1080_60fps.mp4' %}" type="video/mp4">
+
+        </video>
+      
+       </body>
+       
+       </html>
+       <script src="{% static 'script/script1.js' %}"></script>

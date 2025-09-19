@@ -1,0 +1,210 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width-device-width, initial-scale=1.0">
+        <title>About SWM</title>
+        <link rel="stylesheet" href="{% static 'css/acre.css' %}">
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+        <style>
+            /*.form-control{
+                margin-left:20px;
+               
+                display: inline-block;
+                width:500px;
+                position:absolute;
+                
+                
+            }*/
+            .in1{
+                margin-left:70px;
+            }
+            .in{
+                width:300px;
+                margin-top:40px;
+                margin-bottom:20px;
+                margin-left:70px;
+                font-weight:bold;
+                background-color: goldenrod;
+                color:rgb(4, 4, 71);
+                
+                
+            }
+            .in:hover{
+                box-shadow: 20px 5px 30px aliceblue;
+            }
+            .form1{
+                margin:100px;
+                margin-left:440px;
+                align-content:center;
+                width:550px;
+                background-color:rgb(4, 4, 71);
+                padding-left:50px;
+                padding-right:50px;
+                padding-top:10px;
+                z-index:5;
+                position:absolute;
+                box-shadow: 20px 5px 25px 15px goldenrod;
+                border-radius:15px;
+            }
+            .f1{
+                color:goldenrod;
+                font-weight:bolder;
+
+            }
+            nav{
+                color:goldenrod;
+                justify-content:space-between;
+            }
+            .f1 input:hover{
+                box-shadow: 20px 5px 30px goldenrod;
+            }
+            .blscreen{
+                height:1500px;
+                width:100%;
+                background-color:black;
+                opacity:0.8;
+                z-index:3;
+                position:absolute;
+            }
+            .foot{
+                margin-top:88%;
+                z-index:30;
+                position:absolute;
+                color:goldenrod;
+                background-color:rgb(4, 4, 71);
+                width:1550px;
+                padding-left:30px;
+                
+            
+            }
+            .foot1{
+                display:flex;
+            }
+            .bbb1{
+                width:100%;
+                height:1500px;
+                background-color:black;
+                opacity:0.8;
+                display:none;
+                position:absolute;
+                z-index:20;
+
+            }
+            .popup{
+                position:absolute;
+                z-index:30;
+                background-color:rgb(4, 4, 71);
+                color:goldenrod;
+                margin-top:15%;
+                margin-left:35%;
+                padding:20px;
+                border-radius:8px;
+                box-shadow: 20px 5px 30px goldenrod;
+                text-align:center;
+                display:none;
+            }
+            .popup button{
+                width:300px;
+                margin-top:5px;
+                background-color:goldenrod;
+                color:rgb(4, 4, 71);
+                font-weight:bold;
+            }
+            .popup button:hover{
+                box-shadow: 20px 5px 30px rgb(168, 141, 72);
+            }
+            .f1 button{
+                margin-left:70px;
+                margin-top:2px;
+                width:300px;
+                font-weight:bold;
+                background-color:goldenrod;
+                color:rgb(4, 4, 71);
+                margin-bottom:20px;
+            }
+            .f1 button:hover{
+                box-shadow: 20px 5px 30px rgb(168, 141, 72);
+            }
+            .btn{
+                font-weight:bold;
+                background-color:goldenrod;
+                color:rgb(4, 4, 71);
+                margin-bottom:20px;
+                z-index:7;
+                position:absolute;
+            }
+            a{
+                color:goldenrod;
+            }
+            
+            
+        </style>
+        <script>
+           
+function sel(){
+    window.location.href="/SWMS/dor_ta/"
+
+}
+function w2(){
+    window.location.href="/SWMS/work/"
+}
+var kk=document.querySelector(".bbb1")
+var pop=document.querySelector(".popup")
+function kkk(){
+    kk.style.display="block"
+    pop.style.display="block"
+}
+
+        </script>
+    </head>
+    <body>
+       
+         <nav>
+              <div class="head">
+                <h5>JP morgan's</h5>
+                <h2 class="logo">Steel Waste Management System</h2>
+                </div>
+               <div>
+                     <a href="/SWMS/dor_me/"> <i class="fa-solid fa-arrow-left" ></i></a>
+                </div>
+            </nav>
+            <div class="blscreen"></div>
+            <div class="bbb1"></div>
+            <div class="form1">
+            <form action="" method="POST" class="f1" style="flex-direction:column;" >
+                <h1>Record form</h1>
+                {% csrf_token %}
+                {{W_record10}}
+                <input type="submit" onclick="kkk()" class="in">
+                <button onclick="sel()">View</button>
+               
+                
+    
+            </form>
+    
+            </div>
+            
+            <div class="popup">
+                <h4>Your data successfully saved!</h4>
+                <hr>
+                <button onclick="sel()">Show</button><br>
+                <button onclick="sel1()">Close</button>
+            </div>
+            <div class="foot">
+                <hr>
+                <h5>JP Morgan's</h5>
+                <h1>Steel Waste Management</h1>
+                <div class="foot1">
+                    <i class="fa-regular fa-copyright"></i>
+                    <p>JP Morgan _All copyright reserved</p>
+                </div>
+        
+            
+            <script src="{% static 'script/script.js' %}"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+            </body>
+            </html>

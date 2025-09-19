@@ -1,0 +1,117 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width-device-width, initial-scale=1.0">
+        <title>About SWM</title>
+        <link rel="stylesheet" href="{% static 'css/about.css' %}">
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script>
+        function w5(){
+            window.location.href="/SWMS/work/"
+        }
+    </script>
+    </head>
+    <body>
+         <nav>
+              <div class="head">
+                <h5>JP morgan's</h5>
+                <h2 class="logo">Steel Waste Management System</h2>
+                </div>
+                <div class="btn">
+                  <p class="wkbtn" onclick="w5()">Work</p>
+                  <p onclick="show4()" class="locbtn">Contact</p>
+                  <p  onclick="show2()" class="hbtn">Home</p>
+                  <p onclick="show5()" class="lbtn">Logout</p>
+                </div>
+                <i class="fa-solid fa-ellipsis" id="mn" onclick="dp()"></i>
+            </nav>
+            <div class="blscreen1"></div>
+            <div class="popbox">
+                <p class="wkbtn1" onclick="show6()">Work</p>
+                  <p onclick="show4()" class="locbtn1">Location</p>
+                  <p  onclick="show2()" class="hbtn1">Home</p>
+                  <p onclick="show5()" class="lbtn1">Logout</p>
+                  <i class="fa-solid fa-angle-up" id="up" onclick="dd()" ></i>
+            </div>
+        <div class="blscreen"></div>
+        <div class="abhead">
+            <h1>About our company</h1>
+        </div>
+        <div class="vdo-cont">
+        <video playsinline autoplay muted loop class="videob">
+            <source src="{% static 'assets/videos/vintage-indus.mp4' %}" type="video/mp4">
+        </video>
+        </div>
+        <div class="text-cont1">
+            <div class="sub1">
+            <h1>Rises</h1>
+            <h5>Born in 1901, United States Steel Corporation has evolved and grown with America. Whether thriving together in times of prosperity or working together in times of challenge, we built the steel that built this nation. We are energized by the opportunity before us to create a better tomorrow for our company, customers, communities and planet.</h5>
+            </div>
+            <div class="sub2">
+                <img src="{% static 'assets/images/jp mor.jpg' %}" height="500px" width="350px">
+            </div>
+        </div>
+         <div class="text-cont2">
+            
+             <div class="sub-2">
+                <img src="{% static 'assets/images/USA his.jpg' %}" height="600px" width="400px">
+            </div>
+            <div class="sub-1">
+            <h1>Achievments</h1>
+
+            <h5>Making the steel that built America.
+
+From our beginnings, we have made the steel that built America. U. S. Steel's diverse products literally formed the foundation of rapid physical and economic growth throughout the 20th century in cities and small towns across the United States.
+
+From the first skyscrapers to schools, hospitals and other buildings, to the roads, bridges and rail lines that connect us all, our history—our products and the people who made them—is as embedded in American life as any company operating today.
+
+U. S. Steel supplied steel for and erected many famous structures across the United States, including:
+
+San Francisco-Oakland Bay Bridge
+U. S. Steel Tower in Pittsburgh and remains home to the company’s global headquarters.
+Willis Tower and Hancock Tower in Chicago
+New Orleans Superdome
+United Nations Building in New York City
+Vehicle Assembly Building at NASA’s Kennedy Space Station in Florida
+Unisphere sculpture for the 1965 New York World’s Fair
+Pablo Picasso’s untitled sculpture in Chicago known as the “Chicago Picasso.”
+Tappan Zee, Verrazano Narrows and Henry Hudson bridges in New York City
+New River Gorge Bridge in West Virginia
+Chesapeake Bay Bridge in Maryland
+“Three Sisters” bridges in Pittsburgh</h5>
+            </div>
+           
+        </div>
+        <div class="text-cont3">
+            <div class="sub--1">
+            <h1>Goal</h1>
+            <h5>Best of Both® becomes Best for All®.
+
+The transformative effect our Best of Both® strategy has had on U. S. Steel's capabilities is as important as it is exciting. Because with expanded mini mill capabilities, we are in the best position yet to serve a bigger, more demanding and ultimately more vital customer: planet Earth.
+
+And so, Best of Both® becomes Best for All®. In 2021, this evolved strategy gained momentum with actions focused both on the future and the here and now.
+
+We announced our intention to achieve net-zero carbon emissions by 2050, building on our 2030 goal of reducing greenhouse gas emissions intensity by 20% based on a 2018 baseline. We became the first North American steel producer to join ResponsibleSteelTM, a global organization dedicated to advancing steel’s contribution to a sustainable future across the industrial supply chain.
+
+And we launched verdeX® sustainable steel, which contains up to 90% recycled content and is produced with a carbon footprint that’s 75% lower than comparable products made through integrated steelmaking. With U. S. Steel's industry best finishing technologies, verdeX® sustainable steel is available in a growing number of grades that meet exacting automotive OEM standards today, not five years from now..</h5>
+            </div>
+            <div class="sub--2">
+                <img src="{% static 'assets/images/nature.jpg' %}" height="550px" width="450px">
+            </div>
+        </div>
+        <div class="foot">
+                <hr width="500px"> 
+                <h5>JP Morgan's</h5>
+                <h1>Steel Waste Management</h1>
+                <div class="foot1">
+                <i class="fa-regular fa-copyright"></i>
+                <h4>JP Morgan</h4>
+                <p> _All copyright reserved</p>
+                </div>
+                </div>
+
+
+        <script src="{% static 'script/script.js' %}"></script>
+    </body>
+</html>

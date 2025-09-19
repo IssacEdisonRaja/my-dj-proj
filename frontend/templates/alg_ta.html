@@ -1,0 +1,103 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width-device-width, initial-scale=1.0">
+        <title>About SWM</title>
+        <link rel="stylesheet" href="{% static 'css/acre.css' %}">
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <style>
+            nav{
+                
+                color:goldenrod;
+            }
+            table{
+                color:goldenrod;
+            }
+            .search{
+                margin-left:500px;
+                width:400px;
+                padding:10px;
+                margin-top:20px;
+                border-radius:10px;
+                font-size:15px;
+            }
+            .cointa{
+                background-color:rgb(4, 4, 71);
+                color:aliceblue;
+                width:400px;
+                font-size:20px;
+                text-align:center;
+                display:block;
+                
+            }
+            .cointa textarea{
+                display:inline-block;
+            }
+            .plac{
+                color:goldenrod;
+                
+            }
+            .cointa button{
+                width:380px;
+                background-color:goldenrod;
+                color:rgb(4, 4, 71);
+                font-weight:bolder;
+            }
+            .cointa button:hover{
+                 box-shadow: 20px 5px 30px aliceblue;
+                 cursor:pointer;
+            }
+           
+        </style>
+        <script>
+            var enteredText = ""
+            var container = document.querySelector(".cointa")
+            var element = container.querySelectorAll("h4")
+             
+            function check(event){
+                enteredText = event.target.value
+
+                for(var i = 0; i < elements.length; i++){
+                    if (elements[i].textContent.indexOf(enteredText) < 0){
+                        element[i].style.display = "none"
+                    }
+                    else{
+                        elements[i].style.display="block"
+                    }
+                }
+            }
+            function w4(){
+                window.location.href="/SWMS/alag/"
+            }
+        </script>
+    </head>
+    <body>
+         <nav>
+              <div class="head">
+                <h5>JP morgan's</h5>
+                <h2 class="logo">Steel Waste Management System</h2>
+                </div>
+                <div>
+                    <i class="fa-solid fa-arrow-left" onclick="w4()"></i>
+                </div>
+            </nav>
+            
+           
+            {% for Steel7_records in all_record %} <br> 
+            <div class="cointa">
+             
+              <br>
+                <span class="plac"><h1>Date:{{Steel7_records.Date}}</h1>
+                <h4>Manager:{{Steel7_records.Manager_name}}</h4></span><br>
+                <hr><br>
+                <h2>Task:{{Steel7_records.Task}}</h2>
+                <a href="{% url 'delete_reco7' Steel7_records.id %}">
+                <button>Delete</button>
+                </a>
+            </div><br>
+            {% endfor %}<br>
+            
+            <script src="{% static 'script/script.js' %}"></script>
+            </body>
+            </html>

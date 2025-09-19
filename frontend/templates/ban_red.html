@@ -1,0 +1,129 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width-device-width, initial-scale=1.0">
+        <title>About SWM</title>
+        <link rel="stylesheet" href="{% static 'css/acre.css' %}">
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <style>
+            nav {
+        
+                color: goldenrod;
+            }
+        
+        
+            table {
+                margin-top: 100px;
+                border-collapse: collapse;
+        
+            }
+        
+            th td {
+                border-bottom: 1px solid #ddd;
+                border-left: 1px solid #ddd;
+            }
+            th td{
+                padding: 20px;
+                text-align: center;
+                
+        
+        
+            }
+            th {
+  background-color: rgb(4, 4, 71);
+  color: white;
+  padding-left:5px;
+}
+td{
+    padding-left:10px;
+   
+}
+tr:nth-child(even) {background-color: lightblue;}
+th, td {
+            border: 1px solid aliceblue;
+            padding: 8px;
+            text-align: center;
+        }
+           
+        </style>
+        <script>
+            var enteredText = ""
+            var container = document.querySelector(".cointa")
+            var element = container.querySelectorAll("h4")
+             
+            function check(event){
+                enteredText = event.target.value
+
+                for(var i = 0; i < elements.length; i++){
+                    if (elements[i].textContent.indexOf(enteredText) < 0){
+                        element[i].style.display = "none"
+                    }
+                    else{
+                        elements[i].style.display="block"
+                    }
+                }
+            }
+            function w4(){
+                window.location.href="/SWMS/ban_re/"
+            }
+        </script>
+    </head>
+    <body>
+         <nav>
+              <div class="head">
+                <h5>JP morgan's</h5>
+                <h2 class="logo">Steel Waste Management System</h2>
+                </div>
+                <div>
+                    <i class="fa-solid fa-arrow-left" onclick="w4()"></i>
+                </div>
+            </nav>
+            
+        <table>
+            <thead>
+                <th>Was_BD</th>
+                <th>Tot_weight</th>
+                <th>Slud_weight</th>
+                <th>Dus_weight</th>
+                <th>Rcy_SD</th>
+                <th>Rcy_ED</th>
+                <th>Rcy_expense</th>
+                <th>Slud_EP_weight</th>
+                <th>Dus_EP_weight</th>
+                <th>Slud_EP_buyer</th>
+                <th>Dus_EP_buyer</th>
+                <th>O_all_profit</th>
+                <th>Rcy_team</th>
+                <th>Delete_rec</th>
+            </thead>
+            <tbody>
+                {% for was_rec9 in all_record %}
+        
+                <tr>
+        
+                    <td>{{was_rec9.W_BD}}</td>
+                    <td>{{was_rec9.Tot_weight}}</td>
+                    <td>{{was_rec9.Slud_wei}}</td>
+                    <td>{{was_rec9.Dus_wei}}</td>
+                    <td>{{was_rec9.Rcy_SD}}</td>
+                    <td>{{was_rec9.Rcy_ED}}</td>
+                    <td>{{was_rec9.Rcy_expense}}</td>
+                    <td>{{was_rec9.Slud_EP_wei}}</td>
+                    <td>{{was_rec9.Dus_EP_wei}}</td>
+                    <td>{{was_rec9.Dus_buyer}}</td>
+                    <td>{{was_rec9.Slud_buyer}}</td>
+                    <td>{{was_rec9.O_all_profit}}</td>
+                    <td>{{was_rec9.Rcy_Team}}</td>
+                    <td><a href="{% url 'dlt_reco9' was_rec9.id %}">
+                            <button>Delete</button>
+                        </a></td>
+        
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+            
+            <script src="{% static 'script/script.js' %}"></script>
+            </body>
+            </html>

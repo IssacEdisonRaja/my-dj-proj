@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width-device-width, initial-scale=1.0">
+
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script>
+        function w5(){
+            window.location.href="/SWMS/work/"
+        }
+       
+    </script>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <nav>  
+         <div class="head">
+                <h5>JP morgan's</h5>
+                <h2 class="logo">Steel Waste Management System</h2>
+            </div>
+            <div class="ancbtn">
+                <p onclick="show5()" class="logbtn">Logout</p>
+            </div>
+            <i class="fa-solid fa-arrow-right-from-bracket" onclick="show5()" id="lo"></i>
+    </nav>
+            <div class="btn-container">
+            <a href="/SWMS/work/"> <button class="wrbtn">Work</button></a>
+            <button onclick="show1()" class="abbtn" >About</button>
+            <button onclick="show4()" class="lcbtn">Contact</button>
+            
+            </div>
+            
+            <div class="foot">
+                <hr width="500px"> 
+                <h5>JP Morgan's</h5>
+                <h1>Steel Waste Management</h1>
+                <div class="foot1">
+                <i class="fa-regular fa-copyright"></i>
+                <h4>JP Morgan</h4>
+                
+                <p> _All copyright reserved</p>
+                </div>
+                </div>
+               
+            <video width="1550px"  playsinline autoplay muted loop class="videob">
+                <source src="{% static 'assets/videos/weld bg.mp4' %}" type="video/mp4">
+            </video>
+
+        
+        
+            <script src="{% static 'script/script.js' %}"></script>
+            
+     
+</body>
+</html>
+   
+      
